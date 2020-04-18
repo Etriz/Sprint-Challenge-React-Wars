@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 import "./App.css";
 import Character from "./components/Character";
+
+const CharacterContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  width: 75%;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -24,10 +33,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-
-      {characterData.map((item, index) => (
-        <Character key={index} item={item} />
-      ))}
+      <CharacterContainer>
+        {characterData.map((item, index) => (
+          <Character key={index} item={item} />
+        ))}
+      </CharacterContainer>
     </div>
   );
 };

@@ -38,11 +38,15 @@ const App = () => {
 
   const gotoPreviousPage = () => {
     console.log("previous clicked");
-    setGetURL(previousPage);
+    if (previousPage !== null) {
+      setGetURL(previousPage);
+    }
   };
   const gotoNextPage = () => {
     console.log("next clicked");
-    setGetURL(nextPage);
+    if (nextPage !== null) {
+      setGetURL(nextPage);
+    }
   };
   return (
     <div className="App">

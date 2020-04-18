@@ -21,23 +21,12 @@ const App = () => {
       .catch((err) => console.error("Axios Error", err));
   }, []);
 
-  const [planetData, setPlanetData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://swapi.py4e.com/api/planets/")
-      .then((res) => {
-        console.log(res.data.results);
-        setPlanetData([...res.data.results]);
-      })
-      .catch((err) => console.error("Axios Error", err));
-  }, []);
-
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
 
       {characterData.map((item, index) => (
-        <Character key={index} item={item} planet={planetData} />
+        <Character key={index} item={item} />
       ))}
     </div>
   );

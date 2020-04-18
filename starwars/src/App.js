@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import "./App.css";
 import Character from "./components/Character";
+import Pagination from "./components/Pagination";
 
 const CharacterContainer = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ const App = () => {
           <Character key={index} item={item} />
         ))}
       </CharacterContainer>
+      <Pagination />
     </div>
   );
 };

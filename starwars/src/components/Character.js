@@ -6,7 +6,7 @@ import axios from "axios";
 const CharacterCard = styled.div`
   background: #000000bf;
   color: white;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
   width: 25rem;
@@ -26,11 +26,16 @@ const Character = (props) => {
       setPlanetName(res.data.name);
     });
   };
+  const capitalize = (str) => {
+    if (str === "n/a") {
+      return "N/A";
+    } else return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   return (
     <CharacterCard>
-      <h1>{props.item.name}</h1>
+      <h2>{props.item.name}</h2>
       <hr />
-      <p>Gender: {props.item.gender}</p>
+      <p>Gender: {capitalize(props.item.gender)}</p>
       <p>
         Species: {getSpecies()}
         {speciesName}

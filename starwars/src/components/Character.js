@@ -6,10 +6,13 @@ import axios from "axios";
 const CharacterCard = styled.div`
   background: #000000bf;
   color: white;
-  padding: 0 0.5rem;
+  padding: 0rem 2rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
   width: 25rem;
+`;
+const NameTitle = styled.h2`
+  margin: 0.5rem 0rem;
 `;
 
 const Character = (props) => {
@@ -33,7 +36,7 @@ const Character = (props) => {
   };
   return (
     <CharacterCard>
-      <h2>{props.item.name}</h2>
+      <NameTitle>{props.item.name}</NameTitle>
       <hr />
       <p>Gender: {capitalize(props.item.gender)}</p>
       <p>
